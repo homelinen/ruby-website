@@ -6,6 +6,7 @@
     %link{ :href => "/css/main.css", :type => "text/css", :rel => "stylesheet" }
     
   %body
-    = haml :navbar
-    %div{:class => "wrapper"}
-      = yield
+    .banner= haml :navbar
+    .wrapper
+      .content
+        = yield

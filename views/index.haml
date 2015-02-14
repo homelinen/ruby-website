@@ -1,6 +1,5 @@
 %h2 Blog
 
-- markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
 - @articles.each do |a|
   - minus_front = parse_article(a)
-  = markdown.render(minus_front.join("\n"))
+  = markdown(minus_front.join(""))

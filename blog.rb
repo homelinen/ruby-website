@@ -2,13 +2,13 @@ require "sinatra"
 
 require "haml"
 require "yaml"
-require "redcarpet"
+require "rdiscount"
 
 require "sass"
 require "bourbon"
 require "neat"
 
-set :markdown, :layout_engine => :haml, :layout => :layout
+set :markdown, :layout_engine => :haml, :layout => :article
 set :haml, :format => :html5
 
 # ROUTES

@@ -1,29 +1,73 @@
 @import "bourbon"
 
-$visual-grid: true
-$visual-grid-color: yellow
-$visual-grid-index: front
-$visual-grid-opacity: 0.5
+//$visual-grid: true
+//$visual-grid-color: yellow
+//$visual-grid-index: front
+//$visual-grid-opacity: 0.5
 
 $max-width: 960px
 $gutter: golden-ratio(0.5em, 1)
 @import "neat"
 
+// Variables
+
+$orange: #f29f22
+$grey: #262626
 
 body
   background-color: #efefef
+  font-family: Helvetica, Arial, Sans
+  padding: 0
+  margin: 0
+
+a
+  color: $orange
 
 .wrapper
   @include outer-container
 
-.navbar
+.content
+
+.article
+  @include row
+  .date
+    @include span-columns(1)
+    .day
+      @include span-columns(2 of 2)
+    .month
+      @include span-columns(2 of 2)
+      font-size: 0.8em
+  .textbody
+    @include span-columns(8)
+
+.banner
+  background-color: $grey
+  width: 100%
+
+.inner-navbar
   @include outer-container
 
 .header
-  @include span-columns(6)
+  @include span-columns(5)
+  color: $orange
 
 .nav
-  @include span-columns(6)
+  @include span-columns(4)
+  @include shift(1)
 
   .page
-    @include span-columns(1 of 6)
+    @include span-columns(1 of 4)
+
+    padding:
+      top: 2em
+      bottom: 2em
+
+    text-align: center
+
+    &:hover
+      @include linear-gradient($grey, lighten($grey, 6%))
+
+    a
+      text-decoration: none
+      @include fill-parent
+

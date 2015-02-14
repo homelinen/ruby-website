@@ -5,7 +5,7 @@ gem "sinatra"
 
 # Layout
 gem "haml"
-gem "redcarpet"
+gem "rdiscount"
 
 # CSS
 gem "sass"
