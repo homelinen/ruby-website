@@ -1,7 +1,12 @@
 require "sinatra"
+
 require "haml"
 require "yaml"
 require "redcarpet"
+
+require "sass"
+require "bourbon"
+require "neat"
 
 set :markdown, :layout_engine => :haml, :layout => :layout
 set :haml, :format => :html5
@@ -10,6 +15,10 @@ set :haml, :format => :html5
 get '/' do
     @articles = Dir['content/*.md'].sort.reverse
     haml :index
+end
+
+get '/css/main.css' do
+   sass :main, :style => :expanded 
 end
 
 def parse_article(filename)

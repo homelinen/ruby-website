@@ -2,6 +2,11 @@
 source "https://rubygems.org"
 
 gem "sinatra"
+
+# Layout
 gem "haml"
-gem "sass"
 gem "redcarpet"
+
+# CSS
+gem "sass"
+gem "neat"

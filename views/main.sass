@@ -1,0 +1,29 @@
+@import "bourbon"
+
+$visual-grid: true
+$visual-grid-color: yellow
+$visual-grid-index: front
+$visual-grid-opacity: 0.5
+
+$max-width: 960px
+$gutter: golden-ratio(0.5em, 1)
+@import "neat"
+
+
+body
+  background-color: #efefef
+
+.wrapper
+  @include outer-container
+
+.navbar
+  @include outer-container
+
+.header
+  @include span-columns(6)
+
+.nav
+  @include span-columns(6)
+
+  .page
+    @include span-columns(1 of 6)
