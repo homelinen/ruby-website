@@ -1,1 +1,12 @@
-= yield
+.article
+  .date
+    .day
+      = @date.day.to_ordinal
+    .month
+      = @date.strftime('%B')
+    .year
+      = @date.year
+  .textbody
+    %h2
+      %a{href: "post/#{@date}/#{@title}"}= @title.split(/[\-_]/).map { |s| s.capitalize }.join(' ')
+    = yield

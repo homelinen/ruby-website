@@ -49,9 +49,17 @@ p
 
 .wrapper
   @include outer-container
+  margin-top: 1em
 
 .article
   @include row
+
+  h2
+    a
+      text-decoration: none
+      color: $grey
+      &:hover
+        color: $orange
   margin:
     top: 0.6em
     bottom: 2em

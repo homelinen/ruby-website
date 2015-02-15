@@ -2,15 +2,7 @@
 
 - @articles.each do |a|
   - article = parse_article(a)
+  - @date = article[:date]
+  - @title = article[:title]
   - if article
-    .article
-      .date
-        - date = article[:date]
-        .day
-          = date.day.to_ordinal
-        .month
-          = date.strftime('%B')
-        .year
-          = date.year
-      .textbody
-        = markdown(article[:content].join(""))
+    = markdown(article[:content].join(""))
