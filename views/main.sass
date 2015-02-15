@@ -1,3 +1,5 @@
+@import "meyer-reset"
+
 @import "bourbon"
 
 //$visual-grid: true
@@ -11,8 +13,10 @@ $gutter: golden-ratio(0.5em, 1)
 
 // Variables
 
+// Colours from: http://paletton.com/#uid=70M0u0krwunh8E1mdw9uCo+yGjN
 $orange: #f29f22
 $grey: #262626
+$blue: #205E9E
 
 body
   background-color: #efefef
@@ -23,21 +27,55 @@ body
 a
   color: $orange
 
+h1
+  font-size: 2em
+  font-style: bold
+  margin:
+    top: 0.7em
+    bottom: 0.7em
+h2
+  font-size: 2em
+  font-style: bold
+  margin:
+    bottom: 0.3em
+
+h2.page-title
+  margin:
+    top: 0.5em
+    bottom: 0.5em
+
+p 
+  line-height: 1.35em
+
 .wrapper
   @include outer-container
 
-.content
-
 .article
   @include row
+  margin:
+    top: 0.6em
+    bottom: 2em
+
   .date
     @include shift(1)
     @include span-columns(1)
+    background-color: $blue
+    @include border-right-radius(5px)
+    @include border-left-radius(5px)
+    text-align: center
+    padding: 5px
+    color: #F9EFEC
+    font-size: 0.8em
+
     .day
       @include span-columns(2 of 2)
     .month
       @include span-columns(2 of 2)
       font-size: 0.8em
+    .year
+      @include row
+      font-size: 0.6em
+
   .textbody
     @include span-columns(8)
 
@@ -56,6 +94,10 @@ a
   @include span-columns(4)
   @include shift(1)
 
+  a
+    text-decoration: none
+    @include fill-parent
+
   .page
     @include span-columns(1 of 4)
 
@@ -67,8 +109,4 @@ a
 
     &:hover
       @include linear-gradient($grey, lighten($grey, 6%))
-
-    a
-      text-decoration: none
-      @include fill-parent
 

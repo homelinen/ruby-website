@@ -1,5 +1,16 @@
-%h2 Blog
+%h2.page-title Blog
 
 - @articles.each do |a|
-  - minus_front = parse_article(a)
-  = markdown(minus_front.join(""))
+  - article = parse_article(a)
+  - if article
+    .article
+      .date
+        - date = article[:date]
+        .day
+          = date.day.to_ordinal
+        .month
+          = date.strftime('%B')
+        .year
+          = date.year
+      .textbody
+        = markdown(article[:content].join(""))
